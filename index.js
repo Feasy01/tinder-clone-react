@@ -6,8 +6,10 @@ const cors = require("cors");
 const bcrypt = require("bcrypt");
 const path = require("path");
 require("dotenv").config();
-const uri = process.env.REACT_APP_URI;
-const PORT = process.env.PORT || 8000;
+const uri =
+	"mongodb+srv://feasy:szyzenek07@cluster0.k0yoq.mongodb.net/Cluster0?retryWrites=true&w=majority";
+
+const PORT = process.env.PORT || 3000;
 const app = express();
 app.use(cors());
 app.use(express.json());
@@ -215,7 +217,7 @@ app.post("/message", async (req, res) => {
 	}
 });
 __dirname = path.resolve();
-if (process.env.REACT_APP_NODE_ENV === "production") {
+if (true) {
 	app.use(express.static(path.join(__dirname, "/client/build")));
 	app.get("*", function (request, response) {
 		response.sendFile(path.resolve(__dirname, "client", "build", "index.html"));

@@ -67,7 +67,7 @@ function Dashboard() {
 		.map(({ user_id }) => user_id)
 		.concat(userId);
 	const filteredGenderedUsers = genderedUsers?.filter(
-		(genderedUser) => !matchedUserIds.includes(genderedUser.user_id)
+		(genderedUser) => !matchedUserIds?.includes(genderedUser.user_id)
 	);
 	return user && genderedUsers ? (
 		<div className="dashboard">
