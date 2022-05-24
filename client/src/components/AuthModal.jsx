@@ -21,13 +21,10 @@ function AuthModal({ setShowModal, setIsSignUp, isSignUp }) {
 				setError("Passwords need to match");
 				return;
 			}
-			const response = await axios.post(
-				`http://localhost:8000/${isSignUp ? "signup" : "login"}`,
-				{
-					email,
-					password,
-				}
-			);
+			const response = await axios.post(`/${isSignUp ? "signup" : "login"}`, {
+				email,
+				password,
+			});
 			setCookie("AuthToken", response.data.token);
 			setCookie("UserId", response.data.userId);
 			const success = response.status === 201;
