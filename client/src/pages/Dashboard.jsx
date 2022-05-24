@@ -12,7 +12,7 @@ function Dashboard() {
 
 	const updatedMatches = async (matchedUserId) => {
 		try {
-			await axios.put("http://localhost:8000/addmatch", {
+			await axios.put("/addmatch", {
 				userId,
 				matchedUserId,
 			});
@@ -25,7 +25,7 @@ function Dashboard() {
 
 	const getUser = async () => {
 		try {
-			const response = await axios.get("http://localhost:8000/user", {
+			const response = await axios.get("/user", {
 				params: { userId },
 			});
 			console.log("pobieram nowe dane dot matches");
@@ -36,7 +36,7 @@ function Dashboard() {
 	};
 	const getGenderedUsers = async () => {
 		try {
-			const response = await axios.get("http://localhost:8000/gendered-users", {
+			const response = await axios.get("/gendered-users", {
 				params: { gender: user?.gender_interest },
 			});
 
