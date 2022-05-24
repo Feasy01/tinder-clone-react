@@ -11,9 +11,7 @@ const PORT = process.env.PORT || 8000;
 const app = express();
 app.use(cors());
 app.use(express.json());
-app.get("/", (req, res) => {
-	res.json("Hello to my app");
-});
+
 app.post("/signup", async (req, res) => {
 	const client = new MongoClient(uri);
 	const { email, password } = req.body;
