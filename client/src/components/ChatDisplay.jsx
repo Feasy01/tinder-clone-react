@@ -10,7 +10,7 @@ function ChatDisplay({ user, clickedUser }) {
 	const [clickedUsersMessages, setClickedUsersMessages] = useState(null);
 	const getUsersMessages = async () => {
 		try {
-			const response = await axios.get("http://localhost:8000/messages", {
+			const response = await axios.get("/messages", {
 				params: { userId: userId, correspondingUserId: clickedUserId },
 			});
 			setUsersMessages(response.data);
@@ -20,7 +20,7 @@ function ChatDisplay({ user, clickedUser }) {
 	};
 	const getClickedMessages = async () => {
 		try {
-			const response = await axios.get("http://localhost:8000/messages", {
+			const response = await axios.get("/messages", {
 				params: { userId: clickedUserId, correspondingUserId: userId },
 			});
 			setClickedUsersMessages(response.data);

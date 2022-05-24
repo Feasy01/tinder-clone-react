@@ -19,7 +19,7 @@ function ChatInput({
 		};
 		console.log(messages);
 		try {
-			await axios.post("http://localhost:8000/message", { messages });
+			await axios.post("/message", { messages });
 			getUsersMessages();
 			getClickedMessages();
 			setTextArea("");
