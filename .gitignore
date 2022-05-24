@@ -1,3 +1,5 @@
 node_modules
 node_modules copy
 client/node_modules
+.env
+/client/build
