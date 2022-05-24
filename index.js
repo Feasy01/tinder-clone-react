@@ -6,7 +6,7 @@ const cors = require("cors");
 const bcrypt = require("bcrypt");
 const path = require("path");
 require("dotenv").config();
-const uri = process.env.URI;
+const uri = process.env.REACT_APP_URI;
 const PORT = process.env.PORT || 8000;
 const app = express();
 app.use(cors());
@@ -217,7 +217,7 @@ app.post("/message", async (req, res) => {
 	}
 });
 __dirname = path.resolve();
-if (process.env.NODE_ENV === "production") {
+if (process.env.REACT_APP_NODE_ENV === "production") {
 	app.use(express.static(path.join(__dirname, "/client/build")));
 	app.get("*", function (request, response) {
 		response.sendFile(path.resolve(__dirname, "client", "build", "index.html"));
