@@ -5,6 +5,7 @@ const jwt = require("jsonwebtoken");
 const cors = require("cors");
 const bcrypt = require("bcrypt");
 const path = require("path");
+require("dotenv").config();
 const uri =
 	"mongodb+srv://feasy:szyzenek07@cluster0.k0yoq.mongodb.net/Cluster0?retryWrites=true&w=majority";
 const PORT = process.env.PORT || 8000;
